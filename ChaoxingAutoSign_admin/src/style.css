@@ -1,0 +1,115 @@
+/* ==========================================
+   全局样式重置
+========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f2f5;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #909399;
+}
+
+/* Element Plus 全局覆盖 */
+.el-card {
+  border-radius: 8px !important;
+}
+
+.el-button {
+  border-radius: 6px !important;
+}
+
+/* ===== 移动端全局优化 ===== */
+@media (max-width: 767px) {
+  /* Element Plus 表格横向滚动 */
+  .el-table {
+    font-size: 13px;
+  }
+
+  /* Element Plus 对话框全屏适配 */
+  .el-dialog {
+    width: 92% !important;
+    max-width: 92vw !important;
+    margin-top: 8vh !important;
+  }
+
+  .el-dialog__body {
+    padding: 16px !important;
+  }
+
+  .el-dialog__header {
+    padding: 16px 16px 0 !important;
+  }
+
+  .el-dialog__footer {
+    padding: 12px 16px 16px !important;
+  }
+
+  /* 描述列表列数调整 */
+  .el-descriptions {
+    --el-descriptions-item-bordered-label-background: #fafafa;
+  }
+
+  /* 卡片内边距缩小 */
+  .el-card__body {
+    padding: 12px !important;
+  }
+
+  .el-card__header {
+    padding: 10px 12px !important;
+  }
+
+  /* 时间线适配 */
+  .el-timeline-item__wrapper {
+    padding-left: 20px;
+  }
+
+  /* 表单 label 字体缩小 */
+  .el-form-item__label {
+    font-size: 13px;
+  }
+}
+
+/* ===== 防止小屏表格溢出 ===== */
+.el-card .el-table {
+  min-width: 100%;
+}
+
+/* 表格容器横向滚动（包裹在卡片内且有 fixed 列的场景） */
+.el-card:has(.el-table) {
+  overflow-x: auto;
+}
+
+/* 禁用移动端默认的点击高亮 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
